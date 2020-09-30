@@ -11,10 +11,10 @@ html{
     body{
         color: $pale-blue;
         font-family: $font;
-        background: center / cover no-repeat url('/images/bg-mobile.png');
+        background: center / cover no-repeat url('../images/bg-mobile.png');
         @include size(100%, 100vh);
         @include desktops() {
-            background: center / cover no-repeat url('/images/bg-desktop.png');
+            background: center / cover no-repeat url('../images/bg-desktop.png');
         }
     }
 }
