@@ -1,0 +1,121 @@
+#main{
+    @include size();
+    @include flex(center, center){
+        flex-direction: column;
+    };
+    @include desktops() {
+        flex-direction: row;
+    }
+
+    .images{
+        margin-bottom: 2rem;
+        background-color: $dark-blue;
+        border-radius: 1.5rem;
+        border-top-right-radius: 10rem;
+        padding: 4rem;
+        @include size(32rem, 20rem);
+        @include flex(flex-start, space-between){
+            flex-direction: column;
+        };
+        @include desktops() {
+            margin-bottom: 0;
+            margin-right: 2rem;
+        }
+
+        .icons{
+            @include size(100%, 5rem);
+            @include flex(center, flex-start);
+
+            .icon{
+                background-color: $very-dark-blue;
+                padding: 1.5rem;
+                border-radius: 1.5rem;
+                margin-right: 1.5rem;
+                @include size(5rem, 100%);
+            }
+        }
+    }  
+    
+    .content{
+        background-color: $dark-blue;   
+        border-radius: 1.5rem;
+        padding: 4rem;
+        text-align: center;
+        @include size(32rem, 15rem);     
+        @include desktops() {
+            text-align: left;
+            width: 50rem;
+            transform: translateY(15%);
+        }
+
+        .subtitle{
+            font-size: 1.3rem;
+        }
+
+        .input{
+            margin: 1rem 0;
+            background: $very-dark-blue;
+            border-radius: 2rem;
+            @include size(100%, 1.5rem);
+            
+            .progress{
+                padding-right: .2rem;
+                border-radius: 2rem;
+                background: linear-gradient($gradient);
+                @include flex(center, flex-end);
+                @include size(70%, 1.5rem);
+
+                .circle{
+                    border-radius: 50%;
+                    background-color: $pale-blue;
+                    @include size(1.2rem, 1.2rem);
+                }
+            }
+        }
+
+        .size{
+            @include flex(center, space-between);
+            
+            b{
+                font-size: 1.2rem;
+            }
+        }
+
+        .result{
+            background-color: $pale-blue;
+            border-radius: 1rem;
+            @include size(15rem, 6rem);
+            @include flex(center, center);
+            @include position(relative){
+                top: 25%;
+                left: 15%;
+            };
+            @include desktops() {
+                top: -200%;
+                left: 65%;
+
+                &::after{
+                    content: '';
+                    background-color: $pale-blue;
+                    clip-path: polygon(100% 0, 100% 100%, 0 0);
+                    @include size(2.5rem, 2.5rem);
+                    @include position(absolute){
+                        top: 80%;
+                        right: 0;
+                    };
+                }
+            };
+
+            .info{
+                font-size: 1.2rem;
+                color: $grayish-blue;
+                
+                b{
+                    font-size: 3rem;
+                    color: $very-dark-blue;
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+}

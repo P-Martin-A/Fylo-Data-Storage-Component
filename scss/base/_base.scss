@@ -1,0 +1,20 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html{
+    font-size: 10px;
+
+    body{
+        color: $pale-blue;
+        font-family: $font;
+        background: center / cover no-repeat url('/images/bg-mobile.png');
+        @include size(100%, 100vh);
+        @include desktops() {
+            background: center / cover no-repeat url('/images/bg-desktop.png');
+        }
+    }
+}
